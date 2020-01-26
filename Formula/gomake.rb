@@ -2,16 +2,16 @@
 class Gomake < Formula
   desc "Redesign of GNU Make (Makefile) oriented towards project management and command uniformisation among all your projects."
   homepage "http://github.com/efimovalex/gomake"
-  version "1.0.8"
+  version "1.0.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/efimovalex/gomake/releases/download/v1.0.8/gomake_1.0.8_Darwin_x86_64.tar.gz"
-    sha256 "5ce88bb7acd6689a7e77f16fd194252ba6d855e982b26881cd873d815d1bd72a"
+    url "https://github.com/efimovalex/gomake/releases/download/v1.0.0/gomake_1.0.0_Darwin_x86_64.tar.gz"
+    sha256 "e44f28e3ac7d22b0116ca00eeb63432593200cc56075640c0336f00adec4f355"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/efimovalex/gomake/releases/download/v1.0.8/gomake_1.0.8_Linux_x86_64.tar.gz"
-      sha256 "7ae467f83ab178164e50ed579b8df690ecb938141a613161bf140eb5b2ac7e1f"
+      url "https://github.com/efimovalex/gomake/releases/download/v1.0.0/gomake_1.0.0_Linux_x86_64.tar.gz"
+      sha256 "262bba4f5d126a9efa59977bb35849ad431fbedf6fdee12984fddd33189388f4"
     end
   end
   
