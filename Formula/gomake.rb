@@ -3,27 +3,23 @@ require_relative "custom_download_strategy"
 class Gomake < Formula
   desc "Redesign of GNU Make (Makefile) oriented towards project management and command uniformisation among all your projects."
   homepage "http://github.com/efimovalex/gomake"
-  version "1.0.2"
+  version "1.0.3"
   bottle :unneeded
 
   if OS.mac?
-    url "http://github.com/fimovalex/gomake/releases/download/{ .Tag }}/gomake_1.0.2_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "c7bc82aaad8a496a1b3740d8f2db96af388683bdba3b7646e69aeb99a38f06b6"
+    url "http://github.com/fimovalex/gomake/releases/download/{ .Tag }}/gomake_1.0.3_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "eaee8af127fce925585b3c9608ea12ff5047ba16eac75eea699d61bc4cdbb67e"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "http://github.com/fimovalex/gomake/releases/download/{ .Tag }}/gomake_1.0.2_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "da588d7327558946605e6708c3ad4eb382fcb0801a0a7c911706a2d44c14df35"
+      url "http://github.com/fimovalex/gomake/releases/download/{ .Tag }}/gomake_1.0.3_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "97ac3ab98eecfefccbd30773ec8375a8164da160e54d3c12ca56cb4b0ec27a8f"
     end
   end
-  
-  head "http://github.com/fimovalex/gomake.git"
-  ...
   
   depends_on "git"
 
   def install
-    bin.install "program"
-    ...
+    bin.install "gomake"
   end
 
   def caveats; <<~EOS
@@ -41,13 +37,11 @@ class Gomake < Formula
 
   def plist; <<~EOS
     <?xml version="1.0" encoding="UTF-8"?>
-...
 
   EOS
   end
 
   test do
     system "#{bin}/gomake --version"
-    ...
   end
 end
